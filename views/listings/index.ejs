@@ -1,0 +1,225 @@
+<% layout("/layouts/boilerplate") %>
+
+<link rel="stylesheet" href="/listings/style.css">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+<% if (success) { %>
+    <div class="flash-message success">
+        <%= success %>
+    </div>
+<% } %>
+<style>
+   .explore-header {
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+    .tax-box {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-bottom: 10px;
+
+
+        display: flex;
+        align-items: center;
+        gap: 18px;
+
+        padding: 10px 16px;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .tax-box strong {
+        display: block;
+        font-size: 14px;
+    }
+
+    .tax-box small {
+        display: block;
+        margin-top: 3px;
+        color: #717171;
+        font-size: 12px;
+    }
+
+    .tax-box .form-check {
+        margin: 0;
+        padding: 0;
+    }
+
+    .tax-box .form-check-input {
+        margin: 0;
+        cursor: pointer;
+    }
+</style>
+
+<div class="explore-container">
+
+    <div class="category-bar"
+         style="display:flex; align-items:flex-start; gap:40px; padding:25px 0; overflow-x:auto;">
+
+        <span style="display:flex; flex-direction:column; align-items:center; min-width:90px;">
+            <i class="fa-solid fa-globe"></i>
+            All
+        </span>
+
+        <span style="display:flex; flex-direction:column; align-items:center; min-width:90px;">
+            <i class="fa-solid fa-house"></i>
+            Farms
+        </span>
+
+        <span style="display:flex; flex-direction:column; align-items:center; min-width:90px;">
+            <i class="fa-solid fa-bed"></i>
+            Rooms
+        </span>
+
+        <span style="display:flex; flex-direction:column; align-items:center; min-width:90px;">
+            <i class="fa-solid fa-umbrella-beach"></i>
+            Beach
+        </span>
+
+        <span style="display:flex; flex-direction:column; align-items:center; min-width:90px;">
+            <i class="fa-solid fa-mountain"></i>
+            Mountains
+        </span>
+
+        <span style="display:flex; flex-direction:column; align-items:center; min-width:90px;">
+            <i class="fa-solid fa-person-swimming"></i>
+            Amazing pools
+        </span>
+
+        <span style="display:flex; flex-direction:column; align-items:center; min-width:90px;">
+            <i class="fa-solid fa-city"></i>
+            Iconic cities
+        </span>
+
+        <span style="display:flex; flex-direction:column; align-items:center; min-width:90px;">
+            <i class="fa-solid fa-tree"></i>
+            Lakefront
+        </span>
+
+    </div>
+
+</div>
+
+
+    <!-- HEADER -->
+
+  <div class="explore-header">
+
+    <h2>Explore Listings</h2>
+
+    <div class="tax-box">
+
+        <div>
+            <strong>Display total with taxes</strong>
+            <small>Includes 18% GST</small>
+        </div>
+
+        <div class="form-check form-switch">
+            <input
+                class="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="taxToggle"
+            >
+        </div>
+
+    </div>
+
+</div>
+
+
+    <!-- LISTINGS -->
+
+    <div class="listings-grid">
+
+        <% listings.forEach(listing => { %>
+
+            <div class="listing-card">
+
+                <div class="image-wrapper">
+
+                    <img
+                        src="<%= listing.image.url %>"
+                        alt="<%= listing.title %>"
+                    >
+
+                    <button class="heart-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="card-title-row">
+
+                        <h3>
+                            <%= listing.title %>
+                        </h3>
+
+                    </div>
+
+
+                    <p class="location">
+                        <%= listing.location %>, <%= listing.country %>
+                    </p>
+
+
+                    <div class="card-bottom">
+
+                       <p class="price">
+                            ₹<span class="price-value" data-price="<%= listing.price %>">
+                                <%= listing.price.toLocaleString("en-IN") %>
+                            </span>
+                            <span>/ night</span>
+                        </p>
+                        <a
+                            href="/listings/<%= listing._id %>"
+                            class="view-btn"
+                        >
+                            View
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        <% }) %>
+
+    </div>
+
+</div>
+
+<script>
+    const taxToggle = document.getElementById("taxToggle");
+
+    taxToggle.addEventListener("change", function () {
+
+        const prices = document.querySelectorAll(".price-value");
+
+        prices.forEach(price => {
+
+            const originalPrice = Number(price.dataset.price);
+
+            if (taxToggle.checked) {
+                const total = originalPrice * 1.18;
+
+                price.textContent = total.toLocaleString("en-IN");
+            } else {
+                price.textContent = originalPrice.toLocaleString("en-IN");
+            }
+
+        });
+
+    });
+</script>

@@ -1,0 +1,27 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-5">
+
+    <div class="alert alert-danger text-center shadow">
+
+        <h1 class="display-5">
+            Oops! Something went wrong.
+        </h1>
+
+        <hr>
+
+        <h4>
+            <%= err.statusCode %>
+        </h4>
+
+        <p class="lead">
+            <%= err.message %>
+        </p>
+
+        <a href="/listings" class="btn btn-dark mt-3">
+            Back to Home
+        </a>
+
+    </div>
+
+</div>

@@ -1,0 +1,850 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f7f7;
+    color: #222;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    height: 70px;
+    padding: 0 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    text-decoration: none;
+    color: #ff385c;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.back-btn:hover {
+    color: #ff385c;
+}
+
+
+/* MAIN CONTAINER */
+
+.container {
+    width: 85%;
+    max-width: 1000px;
+
+    margin: 45px auto;
+}
+
+
+/* LISTING CARD */
+
+.listing-card {
+    background-color: white;
+
+    border-radius: 18px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.owner{
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.bottom-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.price {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.price span {
+    font-size: 15px;
+    font-weight: 400;
+    color: #666;
+}
+
+.listing-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.listing-actions form {
+    margin: 0;
+}
+
+.edit-btn,
+.delete-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 44px;
+    padding: 0 22px;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    box-sizing: border-box;
+}
+
+.edit-btn {
+    background: #ff385c;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #e31c5f;
+    color: white;
+}
+
+.delete-btn {
+    background: #222;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #000;
+}
+
+/* IMAGE */
+
+.listing-image {
+    width: 100%;
+    height: 480px;
+
+    object-fit: cover;
+    display: block;
+}
+
+
+/* CONTENT */
+
+.listing-content {
+    padding: 32px;
+}
+
+.location {
+    color: #777;
+    font-size: 0.95rem;
+
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 18px;
+}
+
+.description {
+    color: #555;
+
+    font-size: 1rem;
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+/* PRICE */
+
+.bottom-section {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.price span {
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: #777;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    .listing-image {
+        height: 300px;
+    }
+
+    .listing-content {
+        padding: 22px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+}
+
+.bottom-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.edit-btn {
+    background: #ff385c;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.edit-btn:hover {
+    background: #e61e4d;
+    color: white;
+}
+
+.delete-btn {
+    background: #222;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    background: black;
+}
+
+/* =========================
+   REVIEWS SECTION
+========================= */
+
+.reviews-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.reviews-section h2 {
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+
+/* =========================
+   REVIEW SECTION
+========================= */
+
+.review-section {
+    margin-top: 35px;
+}
+
+.review-section h4 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+/* Review form */
+
+.review-form {
+    max-width: 600px;
+}
+
+.review-field {
+    margin-bottom: 20px;
+}
+
+.review-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* Star rating */
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width: fit-content;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 30px;
+    color: #d1d5db;
+    cursor: pointer;
+    margin: 0;
+    transition: 0.15s ease;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label {
+    color: #f5b301;
+}
+
+/* Comment box */
+
+.review-field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d6d6d6;
+    border-radius: 10px;
+    resize: vertical;
+    font-size: 15px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.review-field textarea:focus {
+    outline: none;
+    border-color: #ff385c;
+    box-shadow: 0 0 0 3px rgba(255, 56, 92, 0.1);
+}
+
+/* Submit review */
+
+.review-btn , #login-link {
+    border: none;
+    background: #ff385c;
+    color: white;
+    padding: 11px 22px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.review-btn:hover , #login-link:hover {
+    background: #e31c5f;
+}
+
+/* =========================
+   ALL REVIEWS
+========================= */
+
+.review-divider {
+    height: 1px;
+    background: #e5e5e5;
+    margin: 40px 0 30px;
+}
+
+.all-reviews h2 {
+    margin-bottom: 20px;
+}
+
+.reviews-container {
+    display: grid;
+    gap: 16px;
+}
+
+.review-card {
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 18px;
+    background: #fff;
+}
+
+.review-rating {
+    margin-bottom: 6px;
+}
+
+.review-rating span {
+    font-size: 18px;
+}
+
+.empty-star {
+    color: #d1d5db;
+}
+
+.review-author {
+    margin: 5px 0;
+    font-size: 15px;
+}
+
+.review-comment {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.review-date {
+    color: #777;
+}
+
+/* Review delete */
+
+.review-delete-form {
+    margin-top: 12px;
+}
+
+.review-delete-btn {
+    border: none;
+    background: #f1f1f1;
+    color: #333;
+    padding: 7px 14px;
+    border-radius: 7px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.review-delete-btn:hover {
+    background: #ddd;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    margin-top: 30px;
+    border-radius: 12px;
+}
+
+/* =================================
+   EXPLORE PAGE
+================================= */
+
+.explore-container {
+    width: 92%;
+    max-width: 1500px;
+    margin: 25px auto 60px;
+}
+
+/* CATEGORY BAR */
+.category-bar {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px 0;
+    overflow-x: auto;
+}
+.category-bar span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 90px;
+    white-space: nowrap;
+}
+
+.category-bar i {
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+/* HEADER */
+
+.explore-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 35px 0 25px;
+}
+
+.explore-header h2 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.filter-btn {
+    background: white;
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.filter-btn:hover {
+    background: #f7f7f7;
+}
+
+/* GRID */
+
+.listings-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px 24px;
+}
+
+/* EXPLORE CARD */
+
+.listings-grid .listing-card {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
+}
+
+/* IMAGE */
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 0.95;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #eeeeee;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.listings-grid .listing-card:hover .image-wrapper img {
+    transform: scale(1.03);
+}
+
+/* HEART */
+
+.heart-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+}
+
+.heart-btn:hover {
+    transform: scale(1.08);
+    background: white;
+}
+
+/* CARD CONTENT */
+
+.listings-grid .card-content {
+    padding: 12px 2px 0;
+}
+
+.card-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listings-grid .card-content h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.listings-grid .card-content .location {
+    margin: 0 0 10px;
+    color: #717171;
+    font-size: 14px;
+}
+
+/* PRICE + VIEW */
+
+.listings-grid .card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.listings-grid .card-bottom .price {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+}
+
+.listings-grid .card-bottom .price span {
+    font-weight: 400;
+    color: #555;
+}
+
+.view-btn {
+    text-decoration: none;
+    background: #ff385c;
+    color: white;
+    padding: 7px 13px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.view-btn:hover {
+    background: #e31c5f;
+    color: white;
+}
+
+/* FLASH */
+
+.flash-message {
+    width: 90%;
+    max-width: 900px;
+    margin: 15px auto;
+    padding: 14px 18px;
+    border-radius: 8px;
+}
+
+.flash-message.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+    .listings-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 750px) {
+    .explore-container {
+        width: 94%;
+    }
+
+    .listings-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 15px;
+    }
+
+    .category-bar {
+        gap: 22px;
+    }
+}
+
+@media (max-width: 500px) {
+    .listings-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .explore-header h2 {
+        font-size: 24px;
+    }
+
+    .filter-btn {
+        padding: 8px 12px;
+    }
+}
+
+/* =========================
+   FILTER BUTTON
+========================= */
+
+.filter-btn {
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    border-color: #222;
+}
+
+
+/* =========================
+   HEART BUTTON
+========================= */
+
+.image-wrapper {
+    position: relative;
+}
+
+.heart-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: white;
+    color: #222;
+
+    font-size: 22px;
+    line-height: 36px;
+
+    padding: 0;
+    cursor: pointer;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.heart-btn:hover {
+    transform: scale(1.08);
+}
+
+
+/* ===== FINAL FILTER + HEART FIX ===== */
+
+.filter-btn {
+    border: 1px solid #ddd !important;
+    background: #fff !important;
+    border-radius: 10px !important;
+    padding: 9px 16px !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    box-shadow: none !important;
+}
+
+.filter-btn:hover {
+    border-color: #222 !important;
+}
+
+
+/* HEART */
+
+.image-wrapper {
+    position: relative !important;
+}
+
+.heart-btn {
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+
+    width: 38px !important;
+    height: 38px !important;
+
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 50% !important;
+
+    background: white !important;
+    color: #222 !important;
+
+    font-size: 22px !important;
+    line-height: 38px !important;
+    text-align: center !important;
+
+    cursor: pointer !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,.18) !important;
+}
+
+.heart-btn:hover {
+    transform: scale(1.08);
+}
+
+.explore-header {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.explore-header h2 {
+    margin: 0;
+}
+
+.tax-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 10px 16px;
+
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: white;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.tax-box strong {
+    display: block;
+    font-size: 14px;
+}
+
+.tax-box small {
+    display: block;
+    margin-top: 3px;
+    color: #717171;
+    font-size: 12px;
+}
+
+.tax-box .form-check {
+    margin: 0;
+    padding: 0;
+}
+
+.tax-box .form-check-input {
+    margin: 0;
+    cursor: pointer;
+}

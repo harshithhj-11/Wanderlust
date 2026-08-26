@@ -1,0 +1,31 @@
+<nav class="navbar">
+    <a href="/listings" class="logo">WanderLust</a>
+
+    <div class="nav-links">
+
+        <a href="/listings">Explore</a>
+
+        <% if (typeof currentUser !== "undefined" && currentUser) { %>
+
+            <a href="/listings/new" class="add-btn">
+                + Add Listing
+            </a>
+
+            <a href="/users/logout" class="logout-btn">
+                Logout
+            </a>
+
+        <% } else { %>
+
+            <a href="/users/login">
+                Login
+            </a>
+
+            <a href="/users/signup">
+                Sign Up
+            </a>
+
+        <% } %>
+
+    </div>
+</nav>
