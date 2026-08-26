@@ -11,6 +11,8 @@ dns.setServers([
     "8.8.8.8",
     "1.1.1.1"
 ]);
+
+const PORT = process.env.PORT || 8080;
 const path = require("path");
 const methodOverride = require("method-override");
 const ExpressError = require("./utils/ExpressError");
@@ -62,8 +64,9 @@ main()
 
 // ---------------- Server ----------------
 
-app.listen(8080, () => {
-    console.log("Server is running on port 8080");
+
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server is running on port ${PORT}`);
 });
 
 
